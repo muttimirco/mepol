@@ -1,0 +1,12 @@
+torch==1.5.1
+torchvision==0.6.1
+scikit-learn==0.22.2.post1
+numpy==1.18.5
+scipy==1.4.1
+gym==0.17.2
+mujoco-py==2.0.2.5
+joblib==0.14.1
+tensorboard==2.2.2
+tabulate==0.8.7
+pygame==1.9.6
+matplotlib==3.0.3

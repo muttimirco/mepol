@@ -1,0 +1,14 @@
+# mac os
+.DS_Store
+
+# editors
+.idea/
+.vscode
+
+# python
+__pycache__/
+.venv
+venv
+
+# f2format
+archive
