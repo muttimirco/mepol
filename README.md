@@ -1,5 +1,5 @@
 # MEPOL
-This repository contains the implementation of the **MEPOL** algorithm, presented in [A Policy Gradient for Task Agnostic Exploration](https://arxiv.org/pdf/2007.04640.pdf).
+This repository contains the implementation of the **MEPOL** algorithm, presented in [A Policy Gradient Method for Task-Agnostic Exploration](https://arxiv.org/pdf/2007.04640.pdf).
 
 ## Installation
 In order to use this codebase you need to work with a Python version >= 3.6. Moreover, you need to have a working setup of Mujoco with a valid Mujco license. To setup Mujoco, have a look [here](http://www.mujoco.org/). To use MEPOL, just clone this repository and install the required libraries:
