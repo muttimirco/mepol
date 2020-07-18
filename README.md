@@ -25,7 +25,7 @@ It should be straightforward to run MEPOL on your custom gym-like environments. 
 ### Results visualization
 Once launched, MEPOL will log statistics in the [results](results) folder. You can visualize everything by launching tensorboard targeting that directory:
 ```bash
-tensorboard --logdir=./results --port 8080
+python -m tensorboard --logdir=./results --port 8080
 ```
 and visiting the board at [http://localhost:8080](results).
 
