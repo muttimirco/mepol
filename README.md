@@ -22,15 +22,20 @@ To reproduce the maximum entropy experiments in the paper, run:
 ```
 It should be straightforward to run MEPOL on your custom gym-like environments. For this purpose, you can have a look at the [main training script](src/experiments/mepol.py).
 
+### Goal-Based Reinforcement Learning
+To reproduce the goal-based RL experiments, run:
+```bash
+./scripts/goal_rl/[grid_goal1.sh | grid_goal2.sh | grid_goal3.sh | humanoid_up.sh | ant_escape.sh | ant_navigate.sh | ant_jump.sh]
+```
+By default, this will launch TRPO with MEPOL initialization. To launch TRPO with a random initialization simply omit the *policy_init* argument in the scripts. For further modifications, you can check the [main training script](src/experiments/goal_rl.py).
+
+
 ### Results visualization
-Once launched, MEPOL will log statistics in the [results](results) folder. You can visualize everything by launching tensorboard targeting that directory:
+Once launched, each experiment will log statistics in the [results](results) folder. You can visualize everything by launching tensorboard targeting that directory:
 ```bash
 python -m tensorboard --logdir=./results --port 8080
 ```
 and visiting the board at [http://localhost:8080](results).
-
-### Goal-Based Reinforcement Learning
-**Under construction**
 
 ## Citing
 To cite the MEPOL paper:

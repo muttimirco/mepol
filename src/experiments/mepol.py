@@ -45,7 +45,7 @@ parser.add_argument('--num_epochs', type=int, required=True,
 parser.add_argument('--optimizer', type=str, default='adam', choices=['rmsprop', 'adam'],
                     help='The optimizer')
 parser.add_argument('--heatmap_every', type=int, default=10,
-                    help='How many epochs to save a heatmap (if discretizer is defined).'
+                    help='How many epochs to save a heatmap(if discretizer is defined).'
                          'Also the frequency at which policy weights are saved'
                          'Also the frequency at which full entropy is computed')
 parser.add_argument('--heatmap_episodes', type=int, required=True,

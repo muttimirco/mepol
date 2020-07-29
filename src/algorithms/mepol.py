@@ -291,6 +291,7 @@ def mepol(env, env_name, state_filter, create_policy, k, kl_threshold, max_off_i
 
     # Seed everything
     if seed is not None:
+        # Seed everything
         np.random.seed(seed)
         torch.manual_seed(seed)
         env.seed(seed)
@@ -338,7 +339,7 @@ def mepol(env, env_name, state_filter, create_policy, k, kl_threshold, max_off_i
     full_B = np.log(full_entropy_k) - scipy.special.digamma(full_entropy_k)
     G = scipy.special.gamma(ns/2 + 1)
 
-    # At epoch 0 do not optimize, just log statistics of the initial policy
+    # At epoch 0 do not optimize, just log stuff for the initial policy
     epoch = 0
     t0 = time.time()
 
