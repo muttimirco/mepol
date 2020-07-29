@@ -27,7 +27,7 @@ To reproduce the goal-based RL experiments, run:
 ```bash
 ./scripts/goal_rl/[grid_goal1.sh | grid_goal2.sh | grid_goal3.sh | humanoid_up.sh | ant_escape.sh | ant_navigate.sh | ant_jump.sh]
 ```
-By default, this will launch TRPO with MEPOL initialization. To launch TRPO with a random initialization simply omit the *policy_init* argument in the scripts. For further modifications, you can check the [main training script](src/experiments/goal_rl.py).
+By default, this will launch TRPO with MEPOL initialization. To launch TRPO with a random initialization, simply omit the *policy_init* argument in the scripts. For further modifications, you can check the [main training script](src/experiments/goal_rl.py).
 
 
 ### Results visualization
