@@ -190,7 +190,7 @@ def create_policy(is_behavioral=False):
     )
 
     if is_behavioral and args.zero_mean_start:
-        policy = train_supervised(env, policy, train_steps=zero_mean_train_steps, batch_size=5000)
+        policy = train_supervised(env, policy, train_steps=100, batch_size=5000)
 
     return policy
 

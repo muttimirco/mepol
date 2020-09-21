@@ -6,17 +6,13 @@ import numpy as np
 
 from datetime import datetime
 from src.envs.wrappers import CustomRewardEnv
-from src.envs.mountain_car_wall import MountainCarContinuous
 from src.envs.gridworld_continuous import GridWorldContinuous
 from src.envs.ant import Ant
 from src.envs.upsidedown_ant import UpsideDownAnt
 from src.envs.humanoid_standup import HumanoidStandup
-from src.envs.hand_reach import HandReach
 from src.envs.humanoid import Humanoid
-from src.envs.discretizer import Discretizer
-from src.envs.wrappers import ErgodicEnv
 from src.algorithms.trpo import trpo
-from src.policy import GaussianPolicy, train_supervised
+from src.policy import GaussianPolicy
 
 
 parser = argparse.ArgumentParser(description='Goal-Based Reinforcement Learning - TRPO')
