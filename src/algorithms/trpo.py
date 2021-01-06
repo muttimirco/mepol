@@ -328,8 +328,7 @@ def trpo(
             total_reward += np.sum(traj_rewards)
 
         # Normalize advantages
-        epoch_advantages = (epoch_advantages - epoch_advantages.mean()
-                            / epoch_advantages.std())
+        epoch_advantages = (epoch_advantages - epoch_advantages.mean()) / epoch_advantages.std()
 
         # Create torch tensors for downstream computation
         epoch_states = torch.from_numpy(epoch_states).type(float_type)
@@ -372,7 +371,6 @@ def trpo(
             Computes KL(policy_old||policy_new)
             or according to the following notation KL(0||1)
             """
-            # TODO external
             if env_action_type == 'discrete':
                 p1 = policy(epoch_states)
                 return (p0*torch.log(p0/p1)).sum(dim=1).mean()
@@ -450,7 +448,7 @@ def trpo(
                 drop_last=True
             )
 
-            for i in range(critic_iters):
+            for _ in range(critic_iters):
                 vfunc_optimizer.zero_grad()
                 for mb_states, mb_targets in dloader:
                     vfunc_optimizer.zero_grad()
