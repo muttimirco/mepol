@@ -10,7 +10,6 @@ from src.envs.gridworld_continuous import GridWorldContinuous
 from src.envs.ant import Ant
 from src.envs.upsidedown_ant import UpsideDownAnt
 from src.envs.humanoid_standup import HumanoidStandup
-from src.envs.humanoid import Humanoid
 from src.algorithms.trpo import trpo
 from src.policy import GaussianPolicy
 
@@ -19,7 +18,7 @@ parser = argparse.ArgumentParser(description='Goal-Based Reinforcement Learning 
 
 parser.add_argument('--num_workers', type=int, default=1,
                     help='How many parallel workers to use when collecting samples')
-parser.add_argument('--env', type=str,
+parser.add_argument('--env', type=str, required=True,
                     help='The MDP')
 parser.add_argument('--policy_init', type=str, default=None,
                     help='Path to the weights for custom policy initialization.')
@@ -171,7 +170,8 @@ exp_spec = {
 spec = exp_spec.get(args.env)
 
 if spec is None:
-    print("Experiment name not found. Available ones are: {}".format(', '.join(key for key in exp_spec)))
+    print(f"Experiment name not found. Available ones are: {', '.join(key for key in exp_spec)}.")
+    exit()
 
 env = spec['env_create']()
 

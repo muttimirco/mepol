@@ -29,7 +29,7 @@ class GaussianPolicy(nn.Module):
         self.log_std = nn.Parameter(log_std_init * torch.ones(action_dim, dtype=float_type))
 
         # Constants
-        self.register_buffer('log_of_pi', torch.tensor(np.log(np.pi), dtype=float_type))
+        self.log_of_two_pi = torch.tensor(np.log(2*np.pi), dtype=float_type)
 
         self.initialize_weights()
 
@@ -44,7 +44,7 @@ class GaussianPolicy(nn.Module):
         mean, _ = self(states)
         return torch.sum(
             -0.5 * (
-                self.log_of_pi
+                self.log_of_two_pi
                 + 2*self.log_std
                 + ((actions - mean)**2 / (torch.exp(self.log_std) + eps)**2)
             ), dim=1

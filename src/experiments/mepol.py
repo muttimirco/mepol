@@ -18,7 +18,7 @@ parser = argparse.ArgumentParser(description='MEPOL')
 
 parser.add_argument('--num_workers', type=int, default=1,
                     help='How many parallel workers to use when collecting env trajectories and compute k-nn')
-parser.add_argument('--env', type=str,
+parser.add_argument('--env', type=str, required=True,
                     help='The MDP')
 parser.add_argument('--zero_mean_start', type=int, default=1, choices=[0, 1],
                     help='Whether to make the policy start from a zero mean output')
@@ -172,7 +172,8 @@ exp_spec = {
 spec = exp_spec.get(args.env)
 
 if spec is None:
-    print(f"Experiment name not found. Available ones are: {', '.join(key for key in exp_spec)}")
+    print(f"Experiment name not found. Available ones are: {', '.join(key for key in exp_spec)}.")
+    exit()
 
 env = spec['env_create']()
 discretizer = spec['discretizer_create'](env)
