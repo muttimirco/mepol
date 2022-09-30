@@ -5,7 +5,7 @@ numpy==1.18.5
 scipy==1.4.1
 gym==0.17.2
 mujoco-py==2.0.2.5
-joblib==0.14.1
+joblib==1.2.0
 tensorboard==2.2.2
 tabulate==0.8.7
 pygame==1.9.6
